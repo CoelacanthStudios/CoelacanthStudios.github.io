@@ -19,10 +19,17 @@
 </head>
 
 <body>
-	<div style="height: 100vh">
+	<div style="height: 60vh">
 		<div class="flex-center flex-column">
 			<h1 class="animated fadeIn mb-4">work in progress</h1>
 		</div>
 	</div>
+
+	<div class="card card-body animated fadeIn mb-4">
+		<h4 class="card-title">This website is on GitHub</h4>
+		<div class="flex-row">
+			<a class="card-link" href="https://github.com/CoelacanthStudios/Main-Website">Link to the repository</a>
+    </div>
+</div>
 </body>
 </html>
