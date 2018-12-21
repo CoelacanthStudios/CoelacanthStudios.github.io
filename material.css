@@ -1,0 +1,151 @@
+:root {
+	--background: #2f2f36;
+
+	--panel-background: #44444e;
+	--panel-background-light: #595966;
+	--panel-shadow: #15151a;
+
+	--panel-header: #595966;
+	--panel-header-light: #7e7e8f;
+
+	--item-background: #7e7e8f;
+	--item-background-hover: #686875;
+	--item-shadow: #2d2d35;
+
+	--scrollbar-background: #34343d;
+	--scrollbar-thumb: #9090a1;
+	--scrollbar-thumb-hover: #7e7e8f;
+	--scrollbar-thumb-shadow: #24242b;
+}
+
+
+*::-webkit-scrollbar {
+	width: 6px;
+	border-radius: 4px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--scrollbar-background);
+	border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-thumb);
+	box-shadow: 0px 2px 0px 0px var(--scrollbar-thumb-shadow);
+	border-radius: 4px;
+	
+	transition: background-color 0.1s ease-in, box-shadow 0.1s ease-in-out;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background: var(--scrollbar-thumb-hover);
+	box-shadow: 0px 3px 0px 0px var(--scrollbar-thumb-shadow);
+}
+
+
+.panel {
+	background: var(--panel-background);
+	border-radius: 4px;
+
+	margin: 0;
+	padding: 0;
+	box-shadow: 0px 3px 0px 0px var(--panel-shadow);
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	max-height: 100%;
+}
+
+.light-bg {
+	background: var(--panel-background-light);
+}
+
+
+.panel .header {
+	position: sticky;
+	top: 0px;
+
+	background: var(--panel-header);
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	padding: 10px;
+	margin: 0;
+}
+
+.light-bg .header {
+	background: var(--panel-header-light);
+}
+
+
+.panel .content {
+	padding: 6px;
+	overflow-y: scroll;
+	flex: 1;
+}
+
+.panel .selection {
+	display: grid;
+	grid-gap: 6px;
+}
+
+@media only screen and (max-width: 1366px) {
+	.panel .selection {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media only screen and (min-width: 1366px) {
+	.panel .selection {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+
+.panel .selection .tile {
+	width: 128px;
+	height: 128px;
+	background: var(--item-background);
+	border-radius: 2px;
+	box-shadow: 0px 2px 0px 0px var(--background);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	vertical-align: middle;
+
+	transition: background-color 0.1s ease-in, box-shadow 0.1s ease-in-out;
+}
+
+.panel .selection .tile:hover {
+	background: var(--item-background-hover);
+	box-shadow: 0px 3px 0px 0px var(--background);
+}
+
+
+.panel .properties ul {
+	display: grid;
+	grid-template-rows: repeat(1,  1fr);
+	grid-gap: 6px;
+	
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.panel .properties li {
+	padding: 8px;
+
+	background: var(--item-background);
+	border-radius: 3px;
+	box-shadow: 0px 2px 0px 0px var(--item-shadow);
+
+	transition: background-color 0.1s ease-in, box-shadow 0.1s ease-in-out;
+}
+
+.panel .properties li:hover {
+	background: var(--item-background-hover);
+	box-shadow: 0px 3px 0px 0px var(--item-shadow);
+}
